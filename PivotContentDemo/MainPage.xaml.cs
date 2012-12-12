@@ -20,12 +20,17 @@
                 return;
             }
 
-            // Update the content of the pivot item, where the user control created depends on the
-            // selected index of the Pivot control
-            e.Item.Content = GetContextForPivotItem(((Pivot)sender).SelectedIndex);
+            // Create the user control for the selected pivot item
+            var pivotItemContentControl = CreateUserControlForPivotItem(((Pivot)sender).SelectedIndex);
+            
+            // As we derive from a base, we could load the content
+            pivotItemContentControl.LoadData();
+
+            // Update the content of the pivot item
+            e.Item.Content = pivotItemContentControl;
         }
 
-        private static PivotItemContentUserControlBase GetContextForPivotItem(int selectedIndex)
+        private static PivotItemContentUserControlBase CreateUserControlForPivotItem(int selectedIndex)
         {
             switch (selectedIndex)
             {

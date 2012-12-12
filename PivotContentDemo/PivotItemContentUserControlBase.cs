@@ -4,5 +4,6 @@
 
     public abstract class PivotItemContentUserControlBase : UserControl
     {
+        public abstract void LoadData();
     }
 }

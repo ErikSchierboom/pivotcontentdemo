@@ -6,5 +6,10 @@
         {
             this.InitializeComponent();
         }
+
+        public override void LoadData()
+        {
+            // TODO: load the data
+        }
     }
 }
