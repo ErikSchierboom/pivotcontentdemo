@@ -1,0 +1,44 @@
+﻿namespace PivotContentDemo
+{
+    using System;
+
+    using Microsoft.Phone.Controls;
+
+    public partial class MainPage : PhoneApplicationPage
+    {
+        // Constructor
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+
+        private void OnLoadingPivotItem(object sender, PivotItemEventArgs e)
+        {
+            // Do not set the content of the pivot item if the content has already been set
+            if (e.Item.Content != null)
+            {
+                return;
+            }
+
+            // Update the content of the pivot item, where the user control created depends on the
+            // selected index of the Pivot control
+            e.Item.Content = GetContextForPivotItem(((Pivot)sender).SelectedIndex);
+        }
+
+        private static PivotItemContentUserControlBase GetContextForPivotItem(int selectedIndex)
+        {
+            switch (selectedIndex)
+            {
+                case 0:
+                    return new PivotItem1Content();
+                case 1:
+                    return new PivotItem2Content();
+                case 2:
+                    return new PivotItem3Content();
+                default:
+                    throw new ArgumentOutOfRangeException("selectedIndex");
+            }
+            
+        }
+    }
+}
