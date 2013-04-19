@@ -1,15 +1,12 @@
 ﻿namespace PivotContentDemo
 {
-    public partial class PivotItem1Content : PivotItemContentUserControlBase
+    using System.Windows.Controls;
+
+    public partial class PivotItem1Content : UserControl
     {
         public PivotItem1Content()
         {
             this.InitializeComponent();
-        }
-
-        public override void LoadData()
-        {
-            // TODO: load the data
         }
     }
 }

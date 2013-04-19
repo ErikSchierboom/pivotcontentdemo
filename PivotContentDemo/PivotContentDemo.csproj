@@ -99,7 +99,6 @@
     <Compile Include="PivotItem3Content.xaml.cs">
       <DependentUpon>PivotItem3Content.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PivotItemContentUserControlBase.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
