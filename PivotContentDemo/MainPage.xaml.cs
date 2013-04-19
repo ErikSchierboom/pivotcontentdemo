@@ -7,7 +7,6 @@
 
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
         public MainPage()
         {
             this.InitializeComponent();
@@ -41,7 +40,6 @@
                 default:
                     throw new ArgumentOutOfRangeException("selectedIndex");
             }
-            
         }
     }
 }
